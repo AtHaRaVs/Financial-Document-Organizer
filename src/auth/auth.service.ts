@@ -88,7 +88,7 @@ export class AuthService {
     }
   }
 
-  async getAuthenticated() {
+  async getAuthenticated(): Promise<OAuth2Client> {
     const userToken = await this.loadTokens();
     if (!userToken) {
       throw new Error('No authentication tokens found');
